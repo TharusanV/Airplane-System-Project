@@ -8,19 +8,19 @@
 class Passenger{
 
   public:
-    Passenger();
     Passenger(std::string Name);
 
     ~Passenger();
 
-    void addBooking(Booking& flight);
-
     int getID() const;
     std::string getName() const;
-    const std::vector<Booking>& getBookings() const;
+    const std::vector<Booking>& getBookings();
 
+    void addBooking(Booking& p_flight);
+    void changeName(std::string p_name){this->Name = p_name;}
 
   private:
+    static int nextID;
     int ID;
     std::string Name;
     std::vector<Booking> bookings;
