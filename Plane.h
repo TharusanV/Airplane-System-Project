@@ -15,7 +15,8 @@ class Plane{
   private:
     static int nextID;
     int ID;
+    std::string name;
 
 };
 
-#endif;
+#endif

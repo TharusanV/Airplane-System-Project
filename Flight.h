@@ -6,7 +6,7 @@
 
 class Flight{
   public:
-    Flight();
+    Flight(std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination);
 
     ~Flight();
 
@@ -17,6 +17,7 @@ class Flight{
     std::string getDestination() const;
 
     void changeArrival(std::string p_arrival){this->arrival = p_arrival;}
+    void changeDestination(std::string p_destination){this->destination = p_destination;}
 
   private:
     static int nextID;
@@ -27,4 +28,4 @@ class Flight{
     std::string destination;
 };
 
-#endif;
+#endif

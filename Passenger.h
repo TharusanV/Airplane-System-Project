@@ -1,30 +1,29 @@
 #ifndef PASSENGER_H
 #define PASSENGER_H
 
-#include <string> 
+#include <string>
 #include <vector>
-#include "Booking.h"
 
-class Passenger{
+// Forward declaration of Booking
+class Booking;
 
-  public:
-    Passenger(std::string Name);
-
+class Passenger {
+public:
+    Passenger(const std::string& name);
     ~Passenger();
 
     int getID() const;
     std::string getName() const;
-    const std::vector<Booking>& getBookings();
+    const std::vector<Booking>& getBookings() const;
 
     void addBooking(Booking& p_flight);
-    void changeName(std::string p_name){this->Name = p_name;}
+    void changeName(const std::string& p_name);
 
-  private:
+private:
     static int nextID;
     int ID;
-    std::string Name;
+    std::string name;
     std::vector<Booking> bookings;
-
 };
 
-#endif 
+#endif
