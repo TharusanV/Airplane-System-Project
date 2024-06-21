@@ -3,14 +3,14 @@
 int Flight::nextID = 1;
 
 // Constructor
-Flight::Flight(std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination)
-    : ID(nextID++), date(p_date), arrival(p_arrival), destination(p_destination){
-    // Constructor body (if needed)
+Flight::Flight(Booking& p_booking, Plane& p_plane, std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination)
+    : ID(nextID++), booking(p_booking), plane(p_plane), date(p_date), arrival(p_arrival), destination(p_destination){
+
 }
 
 // Destructor
 Flight::~Flight() {
-    // Destructor implementation (if needed)
+
 }
 
 int Flight::getID() const {

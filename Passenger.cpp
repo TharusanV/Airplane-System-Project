@@ -7,6 +7,7 @@ int Passenger::nextID = 1;
 // Constructor with name parameter
 Passenger::Passenger(const std::string& name) 
     : ID(nextID++), name(name) {
+        
 }
 
 // Destructor

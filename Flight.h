@@ -4,9 +4,13 @@
 #include <string> 
 #include <vector>
 
+#include "Booking.h"
+#include "FlightSeat.h"
+#include "Plane.h"
+
 class Flight{
   public:
-    Flight(std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination);
+    Flight(Booking& p_booking, Plane& p_plane, std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination);
 
     ~Flight();
 
@@ -22,6 +26,11 @@ class Flight{
   private:
     static int nextID;
     int ID;
+
+    Booking booking;
+    std::vector<FlightSeat> fightSeats;
+    Plane plane;
+
     std::string time;
     std::string date;
     std::string arrival;

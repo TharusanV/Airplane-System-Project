@@ -4,6 +4,9 @@
 #include <string> 
 #include <vector>
 
+#include "Flight.h"
+#include "PlaneSeat.h"
+
 class Plane{
   public:
     Plane();
@@ -15,6 +18,8 @@ class Plane{
   private:
     static int nextID;
     int ID;
+    std::vector<Flight> fights;
+    std::vector<PlaneSeat> planeSeats;
     std::string name;
 
 };

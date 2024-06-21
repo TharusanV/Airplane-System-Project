@@ -2,8 +2,6 @@
 #define BOOKING_H
 
 #include <string>
-#include "Flight.h"
-#include "FlightSeat.h"
 
 // Forward declaration of Passenger
 class Passenger;
@@ -14,13 +12,14 @@ public:
     ~Booking();
 
     int getID() const;
+    const Passenger& getPassenger() const;
     const Flight& getFlight() const;
     const FlightSeat& getFlightSeat() const;
 
 private:
     static int nextID;
     int ID;
-    Passenger& passenger;
+    Passenger passenger;
     Flight flight;
     FlightSeat seat;
 };
