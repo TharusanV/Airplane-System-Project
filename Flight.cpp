@@ -1,10 +1,12 @@
 #include "Flight.h"
+#include "FlightSeat.h"
+#include "Plane.h"
 
 int Flight::nextID = 1;
 
 // Constructor
-Flight::Flight(Booking& p_booking, Plane& p_plane, std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination)
-    : ID(nextID++), booking(p_booking), plane(p_plane), date(p_date), arrival(p_arrival), destination(p_destination){
+Flight::Flight(Plane& p_plane, std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination)
+    : ID(nextID++), plane(p_plane), date(p_date), arrival(p_arrival), destination(p_destination){
 
 }
 

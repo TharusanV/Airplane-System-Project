@@ -18,10 +18,8 @@ class Plane{
   private:
     static int nextID;
     int ID;
-    std::vector<Flight> fights;
+    std::vector<Flight> flights;
     std::vector<PlaneSeat> planeSeats;
-    std::string name;
-
 };
 
 #endif

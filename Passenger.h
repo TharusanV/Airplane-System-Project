@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-// Forward declaration of Booking
 class Booking;
 
 class Passenger {
@@ -13,11 +12,12 @@ public:
     ~Passenger();
 
     int getID() const;
+    
     std::string getName() const;
-    const std::vector<Booking>& getBookings() const;
-
-    void addBooking(Booking& p_flight);
     void changeName(const std::string& p_name);
+
+    const std::vector<Booking>& getBookings() const;
+    void addBooking(Booking& p_flight);
 
 private:
     static int nextID;
