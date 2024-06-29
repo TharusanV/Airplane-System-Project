@@ -1,39 +1,26 @@
 #ifndef FLIGHT_H
 #define FLIGHT_H
 
-#include <string> 
+#include <string>
 #include <vector>
+#include "Plane.h"
+#include "PlaneSeat.h" 
 
 class FlightSeat;
 class Plane;
 
-class Flight{
-  public:
-    Flight(Plane& p_plane, std::string p_time, std::string p_date, std::string p_arrival, std::string p_destination);
+class Flight {
+public:
+    Flight(const Plane& p_plane);
     ~Flight();
 
     int getID() const;
 
-    std::string getArrival() const;
-    void changeArrival(std::string p_arrival);
-
-    std::string getDestination() const;
-    void changeDestination(std::string p_destination);
-
-    std::string getTime() const;
-    std::string getDate() const;
-
-  private:
+private:
     static int nextID;
     int ID;
-    
     Plane plane;
-    std::vector<FlightSeat> fightSeats;
-
-    std::string time;
-    std::string date;
-    std::string arrival;
-    std::string destination;
+    std::vector<FlightSeat> allFlightSeats;
 };
 
-#endif
+#endif // FLIGHT_H

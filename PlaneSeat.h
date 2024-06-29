@@ -1,21 +1,19 @@
 #ifndef PLANESEAT_H
 #define PLANESEAT_H
 
-#include <string> 
-#include <vector>
+#include <string>
 
-class PlaneSeat{
-  public:
-    PlaneSeat();
-
+class PlaneSeat {
+public:
+    PlaneSeat(int p_seatNumber, const std::string& p_seatClass);
     ~PlaneSeat();
 
-    int getID() const;
+    int getSeatNumber() const;
+    std::string getSeatClass() const;
 
-  private:
-    static int nextID;
-    int ID;
-
+private:
+    int seatNumber;
+    std::string seatClass;
 };
 
-#endif
+#endif // PLANESEAT_H

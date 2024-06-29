@@ -1,17 +1,14 @@
 #include "Booking.h"
-#include "FlightSeat.h"
 
-// Initialize the static member variable
 int Booking::nextID = 1;
 
-// Constructor
 Booking::Booking(const FlightSeat& p_flightSeat)
-    : ID(nextID++), flightSeat(p_flightSeat) {
- 
+    : ID(nextID++), flightSeat(p_flightSeat)  
+{
 }
 
-// Destructor
 Booking::~Booking() {
+   
 }
 
 int Booking::getID() const {
@@ -21,3 +18,9 @@ int Booking::getID() const {
 const FlightSeat& Booking::getFlightSeat() const {
     return flightSeat;
 }
+
+/*
+void Booking::changeFlightSeat(const FlightSeat& newFlightSeat) {
+    flightSeat = newFlightSeat;  
+}
+*/

@@ -1,25 +1,26 @@
 #ifndef FLIGHTSEAT_H
 #define FLIGHTSEAT_H
 
-#include <string> 
+#include <string>
+#include "PlaneSeat.h"
 
 class Flight;
+class PlaneSeat;
 
-class FlightSeat{
-  public:
-    FlightSeat(const Flight& p_flight, std::string p_seatNumber);
+class FlightSeat {
+public:
+    FlightSeat(const Flight& p_flight, const PlaneSeat& p_planeSeat, bool p_isAvailable);
     ~FlightSeat();
 
     int getID() const;
     const Flight& getFlight() const;
-    std::string getSeatNumber() const;
-    
 
-  private:
+private:
     static int nextID;
     int ID;
-    Flight flight;
-    std::string seatNumber;
+    const Flight& flight;    // Use a reference or pointer to avoid incomplete type issues
+    PlaneSeat seat;
+    bool isAvailable;
 };
 
-#endif
+#endif // FLIGHTSEAT_H

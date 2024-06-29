@@ -1,25 +1,26 @@
 #ifndef PLANE_H
 #define PLANE_H
 
-#include <string> 
+#include <string>
 #include <vector>
 
-#include "Flight.h"
-#include "PlaneSeat.h"
+class PlaneSeat;
 
-class Plane{
-  public:
-    Plane();
-
+class Plane {
+public:
+    Plane(const std::string& p_name, int p_numOfFirstSeats, int p_numOfBusinessSeats, int p_numOfEconomySeats);
+    Plane(const std::string& p_name, std::vector<PlaneSeat> p_planeSeats);
     ~Plane();
 
     int getID() const;
+    std::string getName() const;
+    std::vector<PlaneSeat> getPlaneSeats() const;
 
-  private:
+private:
     static int nextID;
     int ID;
-    std::vector<Flight> flights;
+    std::string name;
     std::vector<PlaneSeat> planeSeats;
 };
 
-#endif
+#endif // PLANE_H
